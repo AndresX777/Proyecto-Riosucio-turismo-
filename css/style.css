@@ -1,0 +1,610 @@
+/* ===== Variables de color (paleta NCS) ===== */
+:root {
+  --color-vino: #4a1015;
+  --color-malva: #b49aa1;
+  --color-durazno: #e8b483;
+  --color-naranja: #d9662f;
+  --color-texto: #2b2b2b;
+  --color-fondo: #fdfaf7;
+}
+
+/* ===== Reset básico ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+}
+
+/* ===== Encabezado tipo "hero" ===== */
+header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background-color: transparent;
+}
+
+header h1 {
+  font-size: 1.4rem;
+  color: var(--color-vino);
+  font-weight: 700;
+}
+
+#lang-toggle {
+  background-color: var(--color-vino);
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 50px; /* botón tipo píldora */
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+#lang-toggle:hover {
+  background-color: var(--color-naranja);
+  transform: translateY(-2px);
+}
+
+/* ===== Sección hero decorativa ===== */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-malva) 0%, var(--color-durazno) 100%);
+  padding: 4rem 2rem 6rem;
+  text-align: center;
+  clip-path: ellipse(120% 100% at 50% 0%); /* forma ondulada tipo "wave" */
+}
+
+.hero h2 {
+  font-size: 2.2rem;
+  color: var(--color-vino);
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: #3a2a25;
+}
+
+.hero .circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.hero .circle.c1 {
+  width: 150px;
+  height: 150px;
+  background-color: var(--color-naranja);
+  top: -40px;
+  left: -40px;
+}
+
+.hero .circle.c2 {
+  width: 90px;
+  height: 90px;
+  background-color: var(--color-vino);
+  bottom: 20px;
+  right: 60px;
+}
+
+/* ===== Botón tipo píldora (CTA) ===== */
+.btn-pill {
+  display: inline-block;
+  background-color: var(--color-naranja);
+  color: #ffffff;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s, transform 0.2s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.btn-pill:hover {
+  background-color: var(--color-vino);
+  transform: translateY(-2px);
+}
+
+/* ===== Navegación (tarjetas de sección) ===== */
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 2rem;
+  margin-top: -3rem; /* para que "flote" sobre el hero */
+}
+
+nav ul li a {
+  display: block;
+  background-color: #ffffff;
+  color: var(--color-vino);
+  text-decoration: none;
+  padding: 1.2rem 1.8rem;
+  border-radius: 16px;
+  font-weight: 600;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+nav ul li a:hover {
+  background-color: var(--color-durazno);
+  transform: translateY(-4px);
+}
+
+/* ===== Contenido principal ===== */
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+/* ===== Tarjetas de contenido (para experiencias reales) ===== */
+.card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  margin-bottom: 2rem;
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-body h3 {
+  color: var(--color-vino);
+  margin-bottom: 0.5rem;
+}
+
+/* ===== Pie de página ===== */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: var(--color-vino);
+  color: #ffffff;
+  margin-top: 3rem;
+}
+
+footer a {
+  color: var(--color-durazno);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Responsive (celulares) ===== */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+}
+
+/* ===== Footer con columnas ===== */
+.site-footer {
+  background-color: var(--color-vino);
+  color: #f0e6e2;
+  margin-top: 3rem;
+  padding: 3rem 2rem 0;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+}
+
+.footer-col h3 {
+  color: var(--color-durazno);
+  font-size: 1.05rem;
+  margin-bottom: 0.8rem;
+}
+
+.footer-col p,
+.footer-col li {
+  font-size: 0.9rem;
+  color: #e8d9d4;
+  line-height: 1.5;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-col ul li a {
+  color: #f0e6e2;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-col ul li a:hover {
+  color: var(--color-naranja);
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  text-align: center;
+  padding: 1.2rem 0;
+  font-size: 0.85rem;
+  color: #d8bfb8;
+}
+
+/* Responsive: columnas apiladas en celular */
+@media (max-width: 700px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+/* ===== Botones de navegación entre páginas ===== */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 900px;
+  margin: 1.5rem auto 0;
+  padding: 0 1.5rem;
+}
+
+/* Variante pequeña del botón píldora (para no competir con el del hero) */
+.btn-pill-sm {
+  padding: 0.5rem 1.3rem;
+  font-size: 0.9rem;
+}
+
+/* Variante "outline" para el botón de regresar (menos protagonismo) */
+.btn-pill-outline {
+  background-color: transparent;
+  color: var(--color-vino);
+  border: 2px solid var(--color-vino);
+  box-shadow: none;
+}
+
+.btn-pill-outline:hover {
+  background-color: var(--color-vino);
+  color: #ffffff;
+}
+
+/* Responsive: botones apilados en celular */
+@media (max-width: 500px) {
+  .page-nav {
+    flex-direction: column;
+  }
+
+  .page-nav .btn-pill {
+    text-align: center;
+  }
+}
+
+/* ===== Encabezado de sección ===== */
+.section-title {
+  max-width: 900px;
+  margin: 2rem auto 0;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.section-title h2 {
+  color: var(--color-vino);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-title p {
+  color: #5a4540;
+}
+
+/* ===== Tarjetas de elección de subsección ===== */
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.choice-card {
+  position: relative;
+  display: block;
+  height: 320px;
+  border-radius: 20px;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.choice-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.choice-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(74,16,21,0.9) 0%, rgba(74,16,21,0.2) 55%, rgba(74,16,21,0) 100%);
+}
+
+.choice-card h3 {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.choice-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25);
+}
+
+.choice-card:hover img {
+  transform: scale(1.08);
+}
+
+@media (max-width: 600px) {
+  .choice-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Tarjetas de experiencia clicables (con hover) ===== */
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-link .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card-link:hover .card {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 26px rgba(0,0,0,0.18);
+}
+
+.card-link .card img {
+  transition: transform 0.4s ease;
+}
+
+.card-link:hover .card img {
+  transform: scale(1.05);
+}
+
+/* ===== Galería de imágenes tipo TripAdvisor ===== */
+.gallery {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.gallery-main {
+  position: relative;
+  background-color: var(--color-vino);
+  border-radius: 20px;
+  overflow: hidden;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.gallery-main-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255,255,255,0.15);
+  color: #ffffff;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.gallery-arrow:hover {
+  background-color: rgba(255,255,255,0.3);
+}
+
+.gallery-arrow.prev { left: 16px; }
+.gallery-arrow.next { right: 16px; }
+
+.gallery-counter {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  background-color: rgba(0,0,0,0.5);
+  color: #ffffff;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.gallery-thumbs {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+  overflow-x: auto;
+  padding-bottom: 0.3rem;
+}
+
+.gallery-thumbs img {
+  width: 90px;
+  height: 65px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s, outline 0.2s;
+  flex-shrink: 0;
+}
+
+.gallery-thumbs img.active {
+  opacity: 1;
+  outline: 3px solid var(--color-naranja);
+}
+
+.gallery-thumbs img:hover {
+  opacity: 1;
+}
+
+/* ===== Página de detalle de experiencia ===== */
+.detail-layout {
+  max-width: 1000px;
+  margin: 0 auto 3rem;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.detail-info h2 {
+  color: var(--color-vino);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.detail-address {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #6b5550;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-description {
+  color: var(--color-texto);
+  line-height: 1.7;
+}
+
+/* Panel lateral: guardar */
+.detail-sidebar {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  height: fit-content;
+}
+
+.save-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  background-color: transparent;
+  border: 2px solid var(--color-naranja);
+  color: var(--color-naranja);
+  padding: 0.7rem 1rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.save-btn:hover {
+  background-color: var(--color-naranja);
+  color: #ffffff;
+}
+
+.save-btn.guardado {
+  background-color: var(--color-naranja);
+  color: #ffffff;
+}
+
+@media (max-width: 700px) {
+  .detail-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Mapa Leaflet en páginas de detalle ===== */
+.detail-map {
+  margin-top: 1.5rem;
+}
+
+.detail-map h4 {
+  color: var(--color-vino);
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+#mapa-leaflet {
+  width: 100%;
+  height: 300px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.detail-map-item {
+  margin-bottom: 1.5rem;
+}
+
+.detail-map-item h5 {
+  color: var(--color-vino);
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
